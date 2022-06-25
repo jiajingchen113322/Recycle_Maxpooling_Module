@@ -89,20 +89,20 @@ class S3DISDataset(Dataset):
 
 
 
-def get_sets(data_path,batch_size,test_batch,test_area):
+def get_sets(data_root,batch_size,test_batch,test_area):
     num_point, block_size, sample_rate = 4096, 1.0, 0.01
 
     train_data=S3DISDataset(split='train', data_root=data_root, num_point=num_point, test_area=test_area, 
     block_size=block_size, sample_rate=sample_rate, transform=None)
-    train_loader=data.DataLoader(dataset=train_data,batch_size=batch_size,shuffle=True,num_workers=2)
+    train_loader=data.DataLoader(dataset=train_data,batch_size=batch_size,shuffle=True,num_workers=0)
 
     test_data=S3DISDataset(split='test', data_root=data_root, num_point=num_point, test_area=test_area, 
     block_size=block_size, sample_rate=sample_rate, transform=None)
-    test_loader=data.DataLoader(dataset=test_data,batch_size=test_batch,shuffle=True,num_workers=2)
+    test_loader=data.DataLoader(dataset=test_data,batch_size=test_batch,shuffle=True,num_workers=0)
 
     valid_loader=S3DISDataset(split='valid', data_root=data_root, num_point=num_point, test_area=test_area, 
     block_size=block_size, sample_rate=sample_rate, transform=None)
-    valid_loader=data.DataLoader(dataset=valid_loader,batch_size=test_batch,shuffle=True,num_workers=2)
+    valid_loader=data.DataLoader(dataset=valid_loader,batch_size=test_batch,shuffle=True,num_workers=0)
     
     return train_loader,test_loader,valid_loader
 
