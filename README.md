@@ -1,6 +1,6 @@
 # Recycling Max Pooling Module for 3D Point Cloud Analysis (CVPR2022)
 This is a pytorch implementation of the paper: *Why Discard if You can Recycle?: A Recycling Max Pooling Module for 3D Point Cloud Analysis*. The paper could be found [here](https://openaccess.thecvf.com/content/CVPR2022/papers/Chen_Why_Discard_if_You_Can_Recycle_A_Recycling_Max_Pooling_CVPR_2022_paper.pdf).
- **For a quck learning, you could go to /model/cls or /model/seg to compare the original DGCNN and DGCNN with RMP for classification and segmentation task. The code for ScanObjectNN, ModelNet40 and S3DIS dataset experiment are given, I will finish the code instruction of ScanObjectNN and S3DIS as soon as possible.**
+ **For a quck learning, you could go to /model/cls or /model/seg to compare the original DGCNN and DGCNN with RMP for classification and segmentation task. The code for ScanObjectNN, ModelNet40 and S3DIS dataset experiment has been given, I will finish the code instruction of ScanObjectNN and S3DIS as soon as possible.**
 ## Recycle Max Pooling Module 
 The picture below shows the network structure of point-based method. Most point-based method use max pooling module to extract Permutation Invaraint Feature for downstream task. However, according to our abservation, a great number of points are completely discarded during the max pooling.
 ![image width="100" height="100"](Image/Motivation.PNG)
